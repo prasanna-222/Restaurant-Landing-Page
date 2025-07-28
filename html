@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delight Restaurant</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Delight</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reservation">Reservation</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="hero-text">
+      <h1>Welcome to Delight Restaurant</h1>
+      <p>Fine dining made delightful</p>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We serve delicious meals made from the freshest ingredients, blending tradition with innovation.</p>
+  </section>
+
+  <section id="menu" class="section">
+    <h2>Our Menu</h2>
+    <div class="filters">
+      <button onclick="filterMenu('all')">All</button>
+      <button onclick="filterMenu('veg')">Vegetarian</button>
+      <button onclick="filterMenu('non-veg')">Non-Vegetarian</button>
+      <button onclick="filterMenu('special')">Special</button>
+    </div>
+    <div class="menu-items">
+      <div class="item veg">Grilled Veg Sandwich</div>
+      <div class="item non-veg">Chicken BBQ</div>
+      <div class="item veg">Pasta Primavera</div>
+      <div class="item special">Chef's Special Curry</div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Dining Room">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Cozy Seating">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Pasta Dish">
+    </div>
+  </section>
+  
+
+  <section id="reservation" class="section">
+    <h2>Reserve a Table</h2>
+    <form class="reservation-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="datetime-local" required />
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Follow us:</p>
+    <div class="social-icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/145/145802.png" alt="Facebook"/></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/145/145805.png" alt="Instagram"/></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/145/145812.png" alt="Twitter"/></a>
+    </div>
+    <p>© 2025 Delight Restaurant</p>
+  </footer>
+
+  <script>
+    function filterMenu(category) {
+      const items = document.querySelectorAll('.menu-items .item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
